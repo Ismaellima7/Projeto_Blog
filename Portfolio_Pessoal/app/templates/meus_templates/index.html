@@ -1,0 +1,92 @@
+{% extends "meus_templates/base.html" %} {% load static %} {% block content %}
+<div>
+  <header class="text-center mb-5">
+    <h1 class="display-4 fw-bold titulo-principal">Portfólio de Estágio</h1>
+  </header>
+
+  <section class="mb-5">
+    <h2 class="h4 mb-3">
+      Portfólio desenvolvido como requisito avançado do estágio supervisionado,
+      sob a orientação do professor/orientador;
+      <strong><em>Cleisson Fabricio</em></strong
+      >, com o respectivo objetivo de colocar em prática os conhecimentos
+      adquiridos nos cursos base exigidos:
+      <strong>Desenvolvimento Web com Django</strong> - Professor
+      <em>Jefferson Lobato</em>, e <strong>Git/GitHub</strong> - Professor
+      <em>Gustavo Guanabra</em>.
+    </h2>
+  </section>
+
+  <section class="mb-4">
+    <h3 class="fw-bold titulo-secao mb-3">
+      Linguagem de Programação e Ferramentas de Trabalho
+    </h3>
+  </section>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="{% static 'django-python.png' %}"
+              class="img-fluid rounded-start"
+              alt="Logo do Django e Python"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Framework Django</h5>
+              <p class="card-text">
+                Django é um framework de web server-side extremamente popular e
+                repleto de características, escrito em Python.
+              </p>
+              <p class="card-text">
+                <a href="https://www.djangoproject.com/" target="_blank">
+                  <small class="text-body-secondary"
+                    >Conheça mais sobre o Framework Django</small
+                  >
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="row g-0">
+          <div
+            class="col-md-4 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{% static 'capa.png' %}"
+              class="img-fluid rounded-start w-75 p-2"
+              alt="Logo do Git"
+            />
+          </div>
+
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Git & GitHub</h5>
+              <p class="card-text">
+                O Git é o mecanismo de controle de versões, enquanto o GitHub é
+                uma plataforma popular que utiliza o Git para oferecer
+                armazenamento remoto e recursos aprimorados de colaboração.
+              </p>
+              <a href="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank">
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Conheça mais sobre Git & Github</small
+                    >
+                  </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

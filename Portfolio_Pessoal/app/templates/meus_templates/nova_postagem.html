@@ -1,0 +1,55 @@
+{% extends "meus_templates/base.html" %}
+{% block content %}
+
+<div class="container mt-5 pt-5">
+
+  <!-- Título da página -->
+  <h2 class="titulo-secao text-center mb-4">
+    ✏️ Adicionar Nova Postagem
+  </h2>
+
+  <!-- Projeto vinculado -->
+  <div class="text-center mb-4">
+    <p class="text-muted">
+      Vinculado ao projeto:
+      <a href="{% url 'projeto' projeto.id %}" class="fw-semibold text-decoration-none text-primary">
+        {{ projeto }}
+      </a>
+    </p>
+  </div>
+
+  <!-- Card do formulário -->
+  <div class="card shadow-sm border-0 rounded-3 mx-auto" style="max-width: 700px;">
+    <div class="card-body p-4">
+      <h5 class="card-title text-center text-secondary mb-4">
+        Preencha os dados abaixo
+      </h5>
+
+      <form action="{% url 'nova_postagem' projeto.id %}" method="post">
+        {% csrf_token %}
+
+        <!-- Campo de descrição estilizado -->
+        <div class="mb-4">
+          <label for="id_descricao" class="form-label fw-semibold">Descrição:</label>
+          <textarea name="descricao" id="id_descricao" rows="6" 
+                    class="form-control shadow-sm" placeholder="Digite aqui sua postagem..." required>
+            {{ form.descricao.value }}
+          </textarea>
+        </div>
+
+        <!-- Botões -->
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <a href="{% url 'postagens' %}" class="btn btn-outline-secondary px-4">
+            ← Voltar
+          </a>
+          <button type="submit" name="submit" class="btn btn-primary px-4">
+            💾 Adicionar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}

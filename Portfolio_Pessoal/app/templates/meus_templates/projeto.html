@@ -1,0 +1,43 @@
+{% extends "meus_templates/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+
+  <!-- Cabeçalho -->
+  <h2 class="titulo-secao text-center mb-4">
+    📁 Projeto: <span class="text-primary fw-bold">{{ projeto }}</span>
+  </h2>
+
+  <!-- Postagens relacionadas -->
+  {% if postagens %}
+    <div class="list-group shadow-sm rounded-3 mb-4">
+      {% for postagem in postagens %}
+        <div class="list-group-item py-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <small class="text-muted">
+              🕓 {{ postagem.data_cadastro|date:"d/m/Y H:i" }}
+            </small>
+          </div>
+          <p class="mb-1">{{ postagem.descricao|linebreaks }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-warning text-center shadow-sm" role="alert">
+      ⚠ Nenhuma postagem registrada neste projeto ainda.
+    </div>
+  {% endif %}
+
+  <!-- Botões de ação -->
+  <div class="text-center mt-4">
+    <a href="{% url 'nova_postagem' projeto.id %}" class="btn btn-primary px-4 me-2">
+      ➕ Adicionar Postagem
+    </a>
+    <a href="{% url 'projetos' %}" class="btn btn-outline-secondary px-4">
+      ← Voltar aos Projetos
+    </a>
+  </div>
+
+</div>
+{% endblock content %}

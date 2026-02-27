@@ -1,0 +1,39 @@
+{% extends "meus_templates/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <!-- Detalhes da Postagem -->
+    <div class="card shadow-sm border-0 mb-4 rounded-3">
+        <div class="card-body">
+            <h3 class="card-title text-primary mb-3">📝 Detalhes da Postagem</h3>
+            <p class="text-muted mb-1">
+                <i class="bi bi-calendar-event"></i>
+                <strong> Data:</strong> {{ postagem.data_cadastro|date:"d/m/Y H:i" }}
+            </p>
+            <hr>
+            <p class="card-text fs-5">{{ postagem.descricao|linebreaks }}</p>
+        </div>
+        <div class="card-footer bg-light d-flex justify-content-between align-items-center">
+            <span class="text-muted small">ID: {{ postagem.id }}</span>
+            <a href="{% url 'postagens' %}" class="btn btn-secondary btn-sm px-3">← Voltar</a>
+        </div>
+    </div>
+
+    <!-- Projeto Relacionado -->
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-body">
+            <h4 class="card-title text-success mb-3">📁 Projeto Relacionado</h4>
+            <p class="mb-1">
+                <i class="bi bi-folder2-open text-success"></i>
+                <strong> Título:</strong> {{ projeto.titulo }}
+            </p>
+            <p class="text-muted">{{ projeto.descricao|truncatechars:150 }}</p>
+            <a href="{% url 'projeto' projeto.id %}" class="btn btn-outline-primary btn-sm px-3">
+                🔗 Ver detalhes do projeto
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

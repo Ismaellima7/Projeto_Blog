@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu blog</title>
+
+    <link rel="stylesheet" href="{% static 'blog_postagem/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-bg-dark bg-warning fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">ProjetoBlog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end bg-warning text-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'projetos' %}">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'postagens' %}">Postagens</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'sobre' %}">Sobre mim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contato' %}">Contato</a></li>
+                        {% if user.is_authenticated %}
+                            Olá, {{ user.username }}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Sair</a></li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrar</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Entrar</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <!-- Footer fixo -->
+    <footer class="bg-warning text-dark text-center py-3 fixed-bottom">
+        <p class="mb-0">&copy; 2025 Meu Portifólio de Estágio. Todos os Direitos Reservados</p>
+    </footer>
+    <h1>
+    </h1>
+
+    <script src="{% static 'blog_postagem/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

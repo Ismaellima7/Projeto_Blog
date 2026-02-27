@@ -1,0 +1,162 @@
+body {
+    font-size: 16px;
+    background-color: rgb(230, 216, 216);
+}
+
+/* Compensa a altura da navbar fixa */
+main {
+    padding-top: 80px;   /* altura da navbar */
+    padding-bottom: 70px; /* altura do footer */
+}
+
+/* Links sem sublinhado */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 🔥 Hover nos links da navbar */
+.navbar .nav-link {
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.navbar .nav-link:hover {
+    background-color: #212529;  
+    color: #fff !important;     
+}
+
+/* 🔥 Hover na navbar inteira */
+.navbar {
+    transition: background-color 0.3s;
+}
+.navbar:hover {
+    background-color: #e6ac00 !important; 
+    cursor: pointer;
+}
+
+/* 🔥 Hover no footer */
+footer {
+    transition: background-color 0.3s, color 0.3s;
+}
+footer:hover {
+    background-color: #e6ac00;  
+    color: #fff;                
+    cursor: pointer;
+}
+
+/* 🔥 Hover especial no título principal */
+.titulo-principal {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.titulo-principal:hover {
+    color: #e6ac00; /* muda a cor do texto */
+}
+
+/* Underline animado */
+.titulo-principal::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #e6ac00;
+    transition: width 0.3s ease-in-out;
+}
+
+.titulo-principal:hover::after {
+    width: 100%;
+}
+
+/* Estilo da seção Sobre */
+.sobre-texto {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Título "Sobre Mim" com hover animado */
+.titulo-secao {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.titulo-secao:hover {
+    color: #e6ac00; /* cor destaque */
+}
+
+.titulo-secao::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #e6ac00;
+    transition: width 0.3s ease-in-out;
+}
+
+.titulo-secao:hover::after {
+    width: 100%;
+}
+
+/* Lista de contatos estilizada */
+.contato-list .list-group-item {
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover nos itens */
+.contato-list .list-group-item:hover {
+    background-color: #fff3cd; /* amarelo claro */
+    cursor: pointer;
+}
+
+/* Links dentro dos contatos */
+.contato-list a {
+    color: #212529;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.contato-list a:hover {
+    color: #e6ac00; /* amarelo destaque */
+    text-decoration: underline;
+}
+
+/* Novo estilo de hover para subtítulos (mantendo o tamanho pequeno) */
+.titulo-subsecao-hover {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.titulo-subsecao-hover:hover {
+    color: #e6ac00; /* muda a cor do texto */
+}
+
+.titulo-subsecao-hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #e6ac00;
+    transition: width 0.3s ease-in-out;
+}
+
+.titulo-subsecao-hover:hover::after {
+    width: 100%;
+}

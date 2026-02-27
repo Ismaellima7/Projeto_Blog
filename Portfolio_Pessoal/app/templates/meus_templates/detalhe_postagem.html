@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <h2 class="text-primary">{{ postagem.titulo }}</h2>
+
+    <p>{{ postagem.descricao }}</p>
+
+    <p>
+        <strong>Data de Criação:</strong>
+        {{ postagem.data_cadastro|date:"d/m/Y H:i" }}
+    </p>
+
+    <hr>
+
+    <h4 class="mt-4">Projeto Relacionado</h4>
+    <p>
+        <strong>Título:</strong> {{ projeto.titulo }}<br>
+        <a href="{% url 'projeto' projeto.id %}" class="btn btn-sm btn-outline-secondary mt-2">
+            Ver detalhes do projeto
+        </a>
+    </p>
+</div>
